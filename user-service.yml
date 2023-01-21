@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: '{cipher}AQAC5Fuhvno6fWIRpYxAw6RR5/4v1YI8AiwzlO6jOBhoXiGuBe+LrB4yMG6t2bJwj6kqtELogwehskR+BxCKXWvXE40E2v627s0zNExXb7BlpSYJ1PhsdzQZciICPsPO/Loj2NC5UTNBgxS5zJjGoEXdW55gofev0FBqL+9m2E8xY2wa66WlCq48g5auH/r3F+rDyWfocTe5qYEU4Lm5zGxtC7lwav7WzdwP1YmKtgEXZ5kVcmmC9HlaiIq5zQ4tqWc2gq+/zZSUntZEx2sRTHjeI1eXt67Ee7rokeWbwDJggK0PNWukdb8bzB6OZyda4MQjEjgNjrx2bW3LcD/PmDG770Mr1yzbTW9YGiA3O67XaWXCVzzG17hpBpcg20+ePD8=' #1234
+
+token:
+  expiration_time: 86400000 # (마이크로초단위 : 하루짜리 토큰)
+  secret: user_token
+
+order_service:
+  url: http://ORDER-SERVICE/order-service/%s/orders # ip대신 application name 쓰려면 @LoadBalanced를 붙여야함
+  exception:
+    orders_is_empty: User's orders is empty.
